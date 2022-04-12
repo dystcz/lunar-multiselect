@@ -1,9 +1,12 @@
 {
-    "name": "dystcz/ getcandy-multiselect",
+    "name": "dystcz/getcandy-multiselect",
     "description": "Multiselect field type for getcandy ecommerce package",
     "keywords": [
         "dystcz",
-        " getcandy-multiselect"
+        "getcandy",
+        "multiselect",
+        "field",
+        "field-type"
     ],
     "homepage": "https://github.com/dystcz/ getcandy-multiselect",
     "license": "MIT",
