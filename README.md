@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/dystcz/getcandy-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/getcandy-multiselect)
 ![GitHub Actions](https://github.com/dystcz/getcandy-multiselect/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Multiselect field that allows saving of multiple values at once. Multiselect options are filled the same way as the Dropdown field which is already in the core.
 
 ## Installation
 
@@ -16,9 +16,7 @@ composer require dystcz/getcandy-multiselect
 
 ## Usage
 
-```php
-// Usage description here
-```
+Just require this package and the multiselect field will appear in the getcandy admin hub. It registers itself automatically.
 
 ### Testing
 
@@ -47,6 +45,3 @@ If you discover any security related issues, please email jakub@dy.st instead of
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
