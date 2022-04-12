@@ -18,6 +18,11 @@ composer require dystcz/getcandy-multiselect
 
 Just require this package and the multiselect field will appear in the getcandy admin hub. It registers itself automatically.
 
+## TODO
+
+- [ ] Do not rely on WireUI for the multiselect component
+- [ ] Unit tests
+
 ### Testing
 
 ```bash
