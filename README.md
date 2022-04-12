@@ -1,4 +1,4 @@
-# Very short description of the package
+# Multiselect field type for getcandy
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dystcz/getcandy-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/getcandy-multiselect)
 [![Total Downloads](https://img.shields.io/packagist/dt/dystcz/getcandy-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/getcandy-multiselect)
