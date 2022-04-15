@@ -35,9 +35,9 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
             ], 'views');
 
             // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/getcandy-multiselect'),
-            ], 'assets');*/
+            $this->publishes([
+                __DIR__.'/../dist' => public_path('vendor/getcandy-multiselect'),
+            ], 'assets');
 
             // Publishing the translation files.
             /*$this->publishes([
