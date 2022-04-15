@@ -11,14 +11,14 @@ class Multiselect implements FieldType
     /**
      * @var array<string>
      */
-    protected array $value;
+    protected array $value = [];
 
     /**
      * Create a new instance of Multiselect field type.
      *
-     * @param array<string> $value
+     * @param string|array|null $value
      */
-    public function __construct(array $value = [])
+    public function __construct(array|string|null $value = [])
     {
         $this->setValue($value);
     }
@@ -38,7 +38,7 @@ class Multiselect implements FieldType
      *
      * @return array<string>
      */
-    public function getValue()
+    public function getValue(): array
     {
         return $this->value;
     }
@@ -47,8 +47,10 @@ class Multiselect implements FieldType
      * Set the value of this field.
      *
      * @param string|array $value
+     *
+     * @return void
      */
-    public function setValue(...$value)
+    public function setValue(...$value): void
     {
         $value = is_array($value) ? Arr::flatten($value) : func_get_args();
 
