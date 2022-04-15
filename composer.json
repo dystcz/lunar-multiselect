@@ -21,8 +21,7 @@
     "require": {
         "php": "^8.0.2",
         "getcandy/admin": "^2.0@beta",
-        "illuminate/support": "^9.0",
-        "wireui/wireui": "^1.0"
+        "illuminate/support": "^9.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0"
