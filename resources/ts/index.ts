@@ -9,6 +9,5 @@ declare global {
 }
 
 document.addEventListener("alpine:init", () => {
-  console.log("init");
   window.Alpine.data("select", select);
 });
