@@ -1,13 +1,12 @@
 <div 
     x-data="select({
-        model:       window.Livewire.find('OV9pO9XeW3XZW2G32pYE').entangle('model').defer,
         searchable:  true,
-        multiselect: false,
+        multiselect: true,
         readonly:    false,
         disabled:    false,
-        placeholder: 'Select one status',
-        optionValue: '',
-        optionLabel: '',
+        placeholder: '{{ __('getcandy-multiselect::multiselect.empty_selection') }}',
+        optionValue: 'value',
+        optionLabel: 'label',
     })" 
     class="relative"
 >
@@ -72,54 +71,27 @@
             </div>
         </div>
         <ul class="max-h-60 overflow-y-auto select-none" tabindex="-1" x-ref="optionsContainer" x-on:keydown.tab.prevent="$event.shiftKey || getNextFocusable().focus()" x-on:keydown.arrow-down.prevent="$event.shiftKey || getNextFocusable().focus()" x-on:keydown.shift.tab.prevent="getPrevFocusable().focus()" x-on:keydown.arrow-up.prevent="getPrevFocusable().focus()">
-            <li data-label="Pending" data-value="1" class="py-2 px-3 focus:outline-none transition-colors ease-in-out duration-50 relative group text-secondary-600 dark:text-secondary-400 cursor-pointer focus:bg-primary-100 focus:text-primary-800 hover:text-white dark:focus:bg-secondary-700 hover:bg-primary-500 dark:hover:bg-secondary-700" tabindex="0" x-on:click="select('1')" x-on:keydown.enter="select('1')" :class="{
-                'font-semibold': isSelected('1'),
-                'hover:bg-negative-500 dark:hover:text-secondary-100': isSelected('1'),
-                'hover:bg-primary-500 dark:hover:bg-secondary-700': !isSelected('1'),
-                }">
-                Pending
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4" x-show="isSelected('1')" style="display: none;">
-                    <svg class="w-5 h-5 text-primary-600 dark:text-secondary-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-            </li>
-            <li data-label="In Progress" data-value="2" class="py-2 px-3 focus:outline-none transition-colors ease-in-out duration-50 relative group text-secondary-600 dark:text-secondary-400 cursor-pointer focus:bg-primary-100 focus:text-primary-800 hover:text-white dark:focus:bg-secondary-700 hover:bg-primary-500 dark:hover:bg-secondary-700" tabindex="0" x-on:click="select('2')" x-on:keydown.enter="select('2')" :class="{
-                'font-semibold': isSelected('2'),
-                'hover:bg-negative-500 dark:hover:text-secondary-100': isSelected('2'),
-                'hover:bg-primary-500 dark:hover:bg-secondary-700': !isSelected('2'),
-                }">
-                In Progress
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4" x-show="isSelected('2')" style="display: none;">
-                    <svg class="w-5 h-5 text-primary-600 dark:text-secondary-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-            </li>
-            <li data-label="Stuck" data-value="3" class="py-2 px-3 focus:outline-none transition-colors ease-in-out duration-50 relative group text-secondary-600 dark:text-secondary-400 cursor-pointer focus:bg-primary-100 focus:text-primary-800 hover:text-white dark:focus:bg-secondary-700 hover:bg-primary-500 dark:hover:bg-secondary-700" tabindex="0" x-on:click="select('3')" x-on:keydown.enter="select('3')" :class="{
-                'font-semibold': isSelected('3'),
-                'hover:bg-negative-500 dark:hover:text-secondary-100': isSelected('3'),
-                'hover:bg-primary-500 dark:hover:bg-secondary-700': !isSelected('3'),
-                }">
-                Stuck
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4" x-show="isSelected('3')" style="display: none;">
-                    <svg class="w-5 h-5 text-primary-600 dark:text-secondary-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-            </li>
-            <li data-label="Done" data-value="4" class="py-2 px-3 focus:outline-none transition-colors ease-in-out duration-50 relative group text-secondary-600 dark:text-secondary-400 cursor-pointer focus:bg-primary-100 focus:text-primary-800 hover:text-white dark:focus:bg-secondary-700 hover:bg-primary-500 dark:hover:bg-secondary-700" tabindex="0" x-on:click="select('4')" x-on:keydown.enter="select('4')" :class="{
-                'font-semibold': isSelected('4'),
-                'hover:bg-negative-500 dark:hover:text-secondary-100': isSelected('4'),
-                'hover:bg-primary-500 dark:hover:bg-secondary-700': !isSelected('4'),
-                }">
-                Done
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4" x-show="isSelected('4')" style="display: none;">
-                    <svg class="w-5 h-5 text-primary-600 dark:text-secondary-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-            </li>
+            @foreach ($field['configuration']['lookups'] as $option)
+                <li 
+                    data-label="{{ $option['label'] }}" 
+                    data-value="{{ $loop->index + 1 }}" 
+                    class="py-2 px-3 focus:outline-none transition-colors ease-in-out duration-50 relative group text-secondary-600 dark:text-secondary-400 cursor-pointer focus:bg-primary-100 focus:text-primary-800 hover:text-primary-100 dark:focus:bg-secondary-700 hover:bg-primary-500 dark:hover:bg-secondary-700" 
+                    tabindex="0" 
+                    x-on:click="select('{{ $loop->index + 1 }}')" 
+                    x-on:keydown.enter="select('{{ $loop->index + 1 }}')" 
+                    :class="{
+                        'font-semibold': isSelected('{{ $loop->index + 1 }}'),
+                        'hover:bg-negative-500 dark:hover:text-secondary-100': isSelected('{{ $loop->index + 1 }}'),
+                        'hover:bg-primary-500 dark:hover:bg-secondary-700': !isSelected('{{ $loop->index + 1 }}'),
+                    }">
+                    {{ $option['label'] }}
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-4" x-show="isSelected('{{ $loop->index + 1 }}')" style="display: none;">
+                        <svg class="w-5 h-5 text-primary-600 dark:text-secondary-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>
