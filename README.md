@@ -20,9 +20,9 @@ Just require this package and the multiselect field will appear in the getcandy 
 
 ## TODO
 
-- [ ] Find out how to solve the @wireUiScripts problem (where to include the script)
+- [x] Find out how to solve the @wireUiScripts problem (where to include the script)
 - [ ] Make select configurable with all its options
-- [ ] Do not rely on WireUI for the multiselect component (can be used to skip first todo)
+- [x] Do not rely on WireUI for the multiselect component (can be used to skip first todo)
 - [ ] Unit tests
 
 ### Testing
