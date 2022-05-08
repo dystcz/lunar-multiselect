@@ -3,6 +3,7 @@
 namespace Dystcz\GetcandyMultiselect;
 
 use GetCandy\Facades\FieldTypeManifest;
+use GetCandy\Hub\GetCandyHub;
 use Illuminate\Support\ServiceProvider;
 
 class GetcandyMultiselectServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
         FieldTypeManifest::add(
             Multiselect::class
         );
+
+        GetCandyHub::script('getcandy-multiselect', __DIR__.'/../dist/getcandy-multiselect.js');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
