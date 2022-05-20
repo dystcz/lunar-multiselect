@@ -3,6 +3,7 @@
 namespace Dystcz\GetcandyMultiselect;
 
 use GetCandy\Facades\FieldTypeManifest;
+use GetCandy\Hub\GetCandyHub;
 use Illuminate\Support\ServiceProvider;
 
 class GetcandyMultiselectServiceProvider extends ServiceProvider
@@ -24,6 +25,8 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
             Multiselect::class
         );
 
+        GetCandyHub::script('getcandy-multiselect', __DIR__.'/../dist/getcandy-multiselect.js');
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('getcandy-multiselect.php'),
@@ -35,9 +38,9 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
             ], 'views');
 
             // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/getcandy-multiselect'),
-            ], 'assets');*/
+            $this->publishes([
+                __DIR__.'/../dist' => public_path('vendor/getcandy-multiselect'),
+            ], 'assets');
 
             // Publishing the translation files.
             /*$this->publishes([

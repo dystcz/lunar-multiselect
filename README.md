@@ -45,7 +45,8 @@ If you discover any security related issues, please email jakub@dy.st instead of
 
 ## Credits
 
--   [Jakub Theimer](https://github.com/dystcz)
+-   [Jakub Theimer](https://github.com/theimerj)
+-   [Jakub Večeřa](https://github.com/veceraj)
 -   [All Contributors](../../contributors)
 
 ## License
