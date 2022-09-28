@@ -1,14 +1,14 @@
 {
-    "name": "dystcz/getcandy-multiselect",
-    "description": "Multiselect field type for getcandy ecommerce package",
+    "name": "dystcz/lunar-multiselect",
+    "description": "Multiselect field type for lunar ecommerce package",
     "keywords": [
         "dystcz",
-        "getcandy",
+        "lunar",
         "multiselect",
         "field",
         "field-type"
     ],
-    "homepage": "https://github.com/dystcz/getcandy-multiselect",
+    "homepage": "https://github.com/dystcz/lunar-multiselect",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -20,26 +20,20 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "getcandy/getcandy": "dev-package-assets",
+        "lunarphp/lunar": "^0.1",
         "illuminate/support": "^9.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/dystcz/getcandy"
-        }
-    ],
     "autoload": {
         "psr-4": {
-            "Dystcz\\GetcandyMultiselect\\": "src"
+            "Dystcz\\LunarMultiselect\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dystcz\\GetcandyMultiselect\\Tests\\": "tests"
+            "Dystcz\\LunarMultiselect\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -52,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dystcz\\GetcandyMultiselect\\GetcandyMultiselectServiceProvider"
+                "Dystcz\\LunarMultiselect\\LunarMultiselectServiceProvider"
             ],
             "aliases": {
-                "GetcandyMultiselect": "Dystcz\\GetcandyMultiselect\\GetcandyMultiselectFacade"
+                "LunarMultiselect": "Dystcz\\LunarMultiselect\\LunarMultiselectFacade"
             }
         }
     },

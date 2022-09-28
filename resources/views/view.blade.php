@@ -4,7 +4,7 @@
         multiselect: true,
         readonly:    false,
         disabled:    false,
-        placeholder: '{{ __('getcandy-multiselect::multiselect.empty_selection') }}',
+        placeholder: '{{ __('lunar-multiselect::multiselect.empty_selection') }}',
         optionValue: 'value',
         optionLabel: 'label',
     })" 
