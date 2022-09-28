@@ -1,12 +1,12 @@
 <?php
 
-namespace Dystcz\GetcandyMultiselect;
+namespace Dystcz\LunarMultiselect;
 
-use GetCandy\Facades\FieldTypeManifest;
-use GetCandy\Hub\GetCandyHub;
 use Illuminate\Support\ServiceProvider;
+use Lunar\Facades\FieldTypeManifest;
+use Lunar\Hub\LunarHub;
 
-class GetcandyMultiselectServiceProvider extends ServiceProvider
+class LunarMultiselectServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -16,8 +16,8 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'getcandy-multiselect');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'getcandy-multiselect');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'lunar-multiselect');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'lunar-multiselect');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
@@ -25,26 +25,26 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
             Multiselect::class
         );
 
-        GetCandyHub::script('getcandy-multiselect', __DIR__.'/../dist/getcandy-multiselect.js');
+        LunarHub::script('lunar-multiselect', __DIR__ . '/../dist/lunar-multiselect.js');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('getcandy-multiselect.php'),
+                __DIR__ . '/../config/config.php' => config_path('lunar-multiselect.php'),
             ], 'config');
 
             // Publishing the views.
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/getcandy-multiselect'),
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/lunar-multiselect'),
             ], 'views');
 
             // Publishing assets.
             $this->publishes([
-                __DIR__.'/../dist' => public_path('vendor/getcandy-multiselect'),
+                __DIR__ . '/../dist' => public_path('vendor/lunar-multiselect'),
             ], 'assets');
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/getcandy-multiselect'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/lunar-multiselect'),
             ], 'lang');*/
 
             // Registering package commands.
@@ -58,6 +58,6 @@ class GetcandyMultiselectServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', ' getcandy-multiselect');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', ' lunar-multiselect');
     }
 }

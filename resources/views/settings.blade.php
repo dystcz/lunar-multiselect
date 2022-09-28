@@ -53,10 +53,10 @@
       <x-slot name="head">
           <x-hub::table.heading></x-hub::table.heading>
           <x-hub::table.heading>
-            {{ __('getcandy-multiselect::multiselect.label_heading') }}
+            {{ __('lunar-multiselect::multiselect.label_heading') }}
           </x-hub::table.heading>
           <x-hub::table.heading>
-            {{ __('getcandy-multiselect::multiselect.value_heading') }}
+            {{ __('lunar-multiselect::multiselect.value_heading') }}
           </x-hub::table.heading>
           <x-hub::table.heading></x-hub::table.heading>
       </x-slot>
@@ -70,7 +70,7 @@
               <x-hub::input.text type="text" @change="update()" x-model.lazy="lookup.label" />
             </x-hub::table.cell>
             <x-hub::table.cell>
-              <x-hub::input.text type="text" @change="update()" x-model.lazy="lookup.value" placeholder="{{ __('getcandy-multiselect::multiselect.value_placeholder') }}" />
+              <x-hub::input.text type="text" @change="update()" x-model.lazy="lookup.value" placeholder="{{ __('lunar-multiselect::multiselect.value_placeholder') }}" />
             </x-hub::table.cell>
             <x-hub::table.cell>
             <button
@@ -93,12 +93,12 @@
     class="block w-full py-2 mt-2 text-xs font-bold text-gray-400 uppercase bg-gray-100 rounded hover:bg-gray-200"
     x-on:click="addRow"
   >
-    {{ __('getcandy-multiselect::multiselect.add_row_btn') }}
+    {{ __('lunar-multiselect::multiselect.add_row_btn') }}
   </button>
 
   @if($errors->has('attribute.configuration.lookups.*.label'))
     <x-hub::alert level="danger">
-      {{ __('getcandy-multiselect::multiselect.missing_labels') }}
+      {{ __('lunar-multiselect::multiselect.missing_labels') }}
     </x-hub::alert>
   @endif
 </div>

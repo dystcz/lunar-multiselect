@@ -1,10 +1,10 @@
 <?php
 
-namespace Dystcz\GetcandyMultiselect;
+namespace Dystcz\LunarMultiselect;
 
-use GetCandy\Base\FieldType;
-use GetCandy\Exceptions\FieldTypeException;
 use Illuminate\Support\Arr;
+use Lunar\Base\FieldType;
+use Lunar\Exceptions\FieldTypeException;
 
 class Multiselect implements FieldType
 {
@@ -54,8 +54,8 @@ class Multiselect implements FieldType
     {
         $value = is_array($value) ? Arr::flatten($value) : func_get_args();
 
-        if ($value && ! is_array($value)) {
-            throw new FieldTypeException(self::class.' value must be an array of string values.');
+        if ($value && !is_array($value)) {
+            throw new FieldTypeException(self::class . ' value must be an array of string values.');
         }
 
         $this->value = $value;
@@ -66,7 +66,7 @@ class Multiselect implements FieldType
      */
     public function getLabel(): string
     {
-        return __('getcandy-multiselect::multiselect.label');
+        return __('lunar-multiselect::multiselect.label');
     }
 
     /**
@@ -74,7 +74,7 @@ class Multiselect implements FieldType
      */
     public function getSettingsView(): string
     {
-        return 'getcandy-multiselect::settings';
+        return 'lunar-multiselect::settings';
     }
 
     /**
@@ -82,7 +82,7 @@ class Multiselect implements FieldType
      */
     public function getView(): string
     {
-        return 'getcandy-multiselect::view';
+        return 'lunar-multiselect::view';
     }
 
     /**

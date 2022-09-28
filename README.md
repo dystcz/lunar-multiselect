@@ -1,8 +1,8 @@
-# Multiselect field type for getcandy
+# Multiselect field type for Lunar
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/dystcz/getcandy-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/getcandy-multiselect)
-[![Total Downloads](https://img.shields.io/packagist/dt/dystcz/getcandy-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/getcandy-multiselect)
-![GitHub Actions](https://github.com/dystcz/getcandy-multiselect/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/dystcz/lunar-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/lunar-multiselect)
+[![Total Downloads](https://img.shields.io/packagist/dt/dystcz/lunar-multiselect.svg?style=flat-square)](https://packagist.org/packages/dystcz/lunar-multiselect)
+![GitHub Actions](https://github.com/dystcz/lunar-multiselect/actions/workflows/main.yml/badge.svg)
 
 Multiselect field that allows saving of multiple values at once. Multiselect options are filled the same way as the Dropdown field which is already in the core.
 
@@ -11,12 +11,12 @@ Multiselect field that allows saving of multiple values at once. Multiselect opt
 You can install the package via composer:
 
 ```bash
-composer require dystcz/getcandy-multiselect
+composer require dystcz/lunar-multiselect
 ```
 
 ## Usage
 
-Just require this package and the multiselect field will appear in the getcandy admin hub. It registers itself automatically.
+Just require this package and the multiselect field will appear in the Lunar admin hub. It registers itself automatically.
 
 ## TODO
 
