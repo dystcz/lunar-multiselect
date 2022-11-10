@@ -7,6 +7,7 @@ export interface InitOptions {
   placeholder: string;
   optionValue: string;
   optionLabel: string;
+  value: any
 }
 
 export interface Select {
@@ -23,6 +24,7 @@ export default (options: InitOptions): Select => ({
   optionValue: options.optionValue,
   optionLabel: options.optionLabel,
   popover: false,
+  value: options.value,
   search: "",
   selectedOptions: [],
 
@@ -158,12 +160,15 @@ export default (options: InitOptions): Select => ({
       this.model = [];
     }
 
+    this.model = this.value[0] != null ? this.value : [];
+
     this.model?.map((selected) => {
       const { dataset: option } = this.getOptionElement(selected);
       this.selectedOptions.push(option);
     });
   },
   modelWasChanged() {
+    this.value = this.model;
     return (
       this.model?.toString() !==
       this.selectedOptions.map((option) => option.value).toString()
