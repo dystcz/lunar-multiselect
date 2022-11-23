@@ -160,7 +160,7 @@ export default (options: InitOptions): Select => ({
       this.model = [];
     }
 
-    this.model = this.value[0] != null ? this.value : [];
+    this.model = this.value && this.value[0] != null ? this.value : [];
 
     this.model?.map((selected) => {
       const { dataset: option } = this.getOptionElement(selected);
