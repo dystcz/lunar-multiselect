@@ -89,16 +89,16 @@
             x-on:keydown.shift.tab.prevent="getPrevFocusable().focus()"
             x-on:keydown.arrow-up.prevent="getPrevFocusable().focus()">
             @foreach ($field['configuration']['lookups'] as $option)
-            <li data-label="{{ $option['label'] }}" data-value="{{ $loop->index + 1 }}"
+            <li data-label="{{ $option['label'] }}" data-value="{{ $option['label'] }}"
                 class="py-2 px-3 transition-colors ease-in-out duration-50 relative group cursor-pointer" tabindex="0"
-                x-on:click="select('{{ $loop->index + 1 }}')" x-on:keydown.enter="select('{{ $loop->index + 1 }}')"
+                x-on:click="select('{{ $option['label'] }}')" x-on:keydown.enter="select('{{ $option['label'] }}')"
                 :class="{
-                    'font-semibold bg-gray-100 hover:bg-gray-200 focus:bg-gray-200': isSelected('{{ $loop->index + 1 }}'),
-                    'hover:bg-gray-50 focus:bg-gray-50': !isSelected('{{ $loop->index + 1 }}'),
+                    'font-semibold bg-gray-100 hover:bg-gray-200 focus:bg-gray-200': isSelected('{{ $option['label'] }}'),
+                    'hover:bg-gray-50 focus:bg-gray-50': !isSelected('{{ $option['label'] }}'),
                 }">
                 {{ $option['label'] }}
                 <div class="absolute inset-y-0 right-0 flex items-center pr-4"
-                    x-show="isSelected('{{ $loop->index + 1 }}')" style="display: none;">
+                    x-show="isSelected('{{ $option['label'] }}')" style="display: none;">
                     <svg class="w-5 h-5 text-gray-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
