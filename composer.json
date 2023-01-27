@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "lunarphp/lunar": "^0.1",
+        "lunarphp/lunar": "^0.2",
         "illuminate/support": "^9.0"
     },
     "require-dev": {
