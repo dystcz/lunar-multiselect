@@ -19,12 +19,12 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
-        "lunarphp/lunar": "^0.2",
-        "illuminate/support": "^9.0"
+        "php": "^8.1",
+        "lunarphp/lunar": "^0.2|^0.3.0-alpha",
+        "illuminate/support": "^9.0|^10.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0"
+        "pestphp/pest": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -41,7 +41,10 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "extra": {
         "laravel": {
