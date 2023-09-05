@@ -19,9 +19,9 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "lunarphp/lunar": "^0.2|^0.3.0-alpha",
-        "illuminate/support": "^9.0|^10.0"
+        "php": "^8.2",
+        "lunarphp/lunar": "^0.5",
+        "illuminate/support": "^10.0"
     },
     "require-dev": {
         "pestphp/pest": "^2.0"
