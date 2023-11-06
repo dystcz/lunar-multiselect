@@ -1,61 +1,61 @@
 {
-    "name": "dystcz/lunar-multiselect",
-    "description": "Multiselect field type for lunar ecommerce package",
-    "keywords": [
-        "dystcz",
-        "lunar",
-        "multiselect",
-        "field",
-        "field-type"
-    ],
-    "homepage": "https://github.com/dystcz/lunar-multiselect",
-    "license": "MIT",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Jakub Theimer",
-            "email": "jakub@dy.st",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.2",
-        "lunarphp/lunar": "^0.6",
-        "illuminate/support": "^10.0"
-    },
-    "require-dev": {
-        "pestphp/pest": "^2.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Dystcz\\LunarMultiselect\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Dystcz\\LunarMultiselect\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Dystcz\\LunarMultiselect\\LunarMultiselectServiceProvider"
-            ],
-            "aliases": {
-                "LunarMultiselect": "Dystcz\\LunarMultiselect\\LunarMultiselectFacade"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "dystcz/lunar-multiselect",
+  "description": "Multiselect field type for lunar ecommerce package",
+  "keywords": [
+    "dystcz",
+    "lunar",
+    "multiselect",
+    "field",
+    "field-type"
+  ],
+  "homepage": "https://github.com/dystcz/lunar-multiselect",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jakub Theimer",
+      "email": "jakub@dy.st",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "lunarphp/lunar": "^0.7",
+    "illuminate/support": "^10.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dystcz\\LunarMultiselect\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dystcz\\LunarMultiselect\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dystcz\\LunarMultiselect\\LunarMultiselectServiceProvider"
+      ],
+      "aliases": {
+        "LunarMultiselect": "Dystcz\\LunarMultiselect\\LunarMultiselectFacade"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
